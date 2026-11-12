@@ -151,8 +151,7 @@ button:disabled {
 .booth-screen {
   min-height: 100vh;
   padding: 25px 6%;
-  background:
-    radial-gradient(ellipse at top, #1c2a3a, #090b0e 65%);
+  background: radial-gradient(ellipse at top, #1c2a3a, #090b0e 65%);
 }
 
 .hidden {
@@ -266,6 +265,41 @@ button:disabled {
   background: #182231;
   border: none;
   color: white;
+}
+
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.filter-controls label {
+  color: #aab5c1;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.filter-controls select {
+  padding: 12px;
+  background: #111a25;
+  border: 1px solid #56677a;
+  color: #e4dfd3;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+#stripButton {
+  padding: 12px 18px;
+  background: #34465c;
+  border: 1px solid #8493a4;
+  color: white;
+  letter-spacing: 1px;
+}
+
+#stripButton:hover {
+  background: #536c88;
 }
 
 @keyframes appear {

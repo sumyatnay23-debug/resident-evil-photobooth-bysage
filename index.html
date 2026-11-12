@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090b10">
+    <title>Raccoon City | Photobooth</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- INTRO SCREEN -->
+    <main id="intro-screen" class="intro-screen">
+
+        <div class="background-overlay"></div>
+
+        <header class="top-bar">
+            <span class="logo">R.P.D.</span>
+            <span class="classified">CONFIDENTIAL // 1998</span>
+        </header>
+
+        <section class="intro-content">
+
+            <p class="eyebrow">WELCOME TO RACCOON CITY</p>
+
+            <h1>
+                RESIDENT EVIL
+                <span>PHOTO ARCHIVE</span>
+            </h1>
+
+            <div class="divider"></div>
+
+            <p class="intro-description">
+                Every picture tells a story.
+                Some should never have been taken.
+            </p>
+
+            <button id="enter-button" class="enter-button">
+                ENTER PHOTOSTUDIO
+                <span>→</span>
+            </button>
+
+            <p class="small-warning">
+                WARNING: UNAUTHORIZED ACCESS PROHIBITED
+            </p>
+
+        </section>
+
+        <footer class="bottom-bar">
+            <span>UMBRELLA CORPORATION</span>
+            <span>SECURE ARCHIVE SYSTEM</span>
+        </footer>
+
+    </main>
+
+
+    <!-- PHOTOBOOTH SCREEN -->
+    <main id="studio-screen" class="studio-screen hidden">
+
+        <header class="studio-header">
+            <div>
+                <p class="eyebrow">RACCOON CITY POLICE DEPARTMENT</p>
+                <h2>PHOTO STUDIO</h2>
+            </div>
+
+            <button id="back-button" class="back-button">
+                ← BACK
+            </button>
+        </header>
+
+        <section class="studio-layout">
+
+            <div class="camera-panel">
+
+                <p class="section-label">LIVE CAMERA FEED</p>
+
+                <div class="camera-container">
+                    <video id="camera" autoplay playsinline></video>
+                    <canvas id="photo-canvas" class="hidden"></canvas>
+
+                    <div id="camera-message" class="camera-message">
+                        CAMERA NOT CONNECTED
+                    </div>
+                </div>
+
+                <div class="camera-controls">
+                    <button id="start-camera">START CAMERA</button>
+                    <button id="capture-button" disabled>TAKE PHOTO</button>
+                </div>
+
+                <div class="upload-area">
+                    <label for="photo-upload">OR UPLOAD A PHOTO</label>
+                    <input type="file" id="photo-upload" accept="image/*">
+                </div>
+
+            </div>
+
+
+            <aside class="photo-panel">
+
+                <p class="section-label">PHOTO ARCHIVE</p>
+
+                <div id="photo-gallery" class="photo-gallery">
+                    <p class="empty-message">
+                        No photographs recorded yet.
+                    </p>
+                </div>
+
+                <button id="download-button" disabled>
+                    DOWNLOAD PHOTOS
+                </button>
+
+                <button id="clear-button" class="clear-button" disabled>
+                    CLEAR ARCHIVE
+                </button>
+
+            </aside>
+
+        </section>
+
+        <footer class="studio-footer">
+            PROPERTY OF UMBRELLA CORPORATION · HANDLE WITH CARE
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

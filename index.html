@@ -1,130 +1,96 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#090b10">
-    <title>Raccoon City | Photobooth</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101113">
+  <title>Resident Evil | Survivor Archive</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- INTRO SCREEN -->
-    <main id="intro-screen" class="intro-screen">
+  <div class="grain"></div>
 
-        <div class="background-overlay"></div>
+  <!-- INTRO SCREEN -->
+  <main class="intro-screen">
+    <header class="top-bar">
+      <span>RACCOON CITY DATABASE</span>
+      <span>EST. 2004</span>
+    </header>
 
-        <header class="top-bar">
-            <span class="logo">R.P.D.</span>
-            <span class="classified">CONFIDENTIAL // 1998</span>
-        </header>
+    <section class="intro-content">
+      <p class="eyebrow">CLASSIFIED PERSONNEL FILE</p>
+      <h1>RESIDENT EVIL</h1>
+      <h2>PHOTOBOOTH</h2>
 
-        <section class="intro-content">
+      <div class="divider"></div>
 
-            <p class="eyebrow">WELCOME TO RACCOON CITY</p>
+      <p class="description">
+        Every survivor has a story.<br>
+        Preserve yours before it's too late.
+      </p>
 
-            <h1>
-                RESIDENT EVIL
-                <span>PHOTO ARCHIVE</span>
-            </h1>
+      <button id="startButton">
+        <span>▶</span> NEW GAME
+      </button>
 
-            <div class="divider"></div>
+      <p class="instruction">PRESS ENTER TO CONTINUE</p>
+    </section>
 
-            <p class="intro-description">
-                Every picture tells a story.
-                Some should never have been taken.
-            </p>
+    <footer class="bottom-bar">
+      <span>UMBRELLA CORPORATION</span>
+      <span>SECURE CONNECTION // ACTIVE</span>
+    </footer>
+  </main>
 
-            <button id="enter-button" class="enter-button">
-                ENTER PHOTOSTUDIO
-                <span>→</span>
-            </button>
+  <!-- PHOTOBOOTH SCREEN -->
+  <section id="boothScreen" class="booth-screen hidden">
 
-            <p class="small-warning">
-                WARNING: UNAUTHORIZED ACCESS PROHIBITED
-            </p>
+    <header class="booth-header">
+      <p>RACCOON CITY // PHOTO TERMINAL</p>
+      <button id="backButton">← BACK</button>
+    </header>
 
-        </section>
+    <div class="booth-content">
+      <p class="eyebrow">SURVIVOR DATABASE</p>
+      <h2>PHOTO TERMINAL</h2>
+      <p>Capture your survivor memory.</p>
 
-        <footer class="bottom-bar">
-            <span>UMBRELLA CORPORATION</span>
-            <span>SECURE ARCHIVE SYSTEM</span>
-        </footer>
+      <div class="camera-container">
+        <video id="camera" autoplay playsinline></video>
+        <div id="cameraMessage">CAMERA STANDBY</div>
+      </div>
 
-    </main>
+      <div class="controls">
+        <button id="cameraButton">START CAMERA</button>
+        <button id="captureButton" disabled>TAKE PHOTO</button>
 
+        <label class="upload-button">
+          UPLOAD PHOTO
+          <input type="file" id="uploadInput" accept="image/*" hidden>
+        </label>
+      </div>
 
-    <!-- PHOTOBOOTH SCREEN -->
-    <main id="studio-screen" class="studio-screen hidden">
+      <div class="filter-controls">
+        <label for="filterSelect">SELECT YOUR FILTER</label>
 
-        <header class="studio-header">
-            <div>
-                <p class="eyebrow">RACCOON CITY POLICE DEPARTMENT</p>
-                <h2>PHOTO STUDIO</h2>
-            </div>
+        <select id="filterSelect">
+          <option value="none">Original</option>
+          <option value="grayscale">Survivor B&W</option>
+          <option value="vintage">Vintage</option>
+          <option value="horror">Blood Moon</option>
+        </select>
 
-            <button id="back-button" class="back-button">
-                ← BACK
-            </button>
-        </header>
+        <button id="stripButton">DOWNLOAD PHOTO STRIP</button>
+      </div>
 
-        <section class="studio-layout">
+      <p id="statusMessage">Awaiting survivor input...</p>
 
-            <div class="camera-panel">
+      <div id="photoGallery" class="photo-gallery"></div>
+    </div>
+  </section>
 
-                <p class="section-label">LIVE CAMERA FEED</p>
-
-                <div class="camera-container">
-                    <video id="camera" autoplay playsinline></video>
-                    <canvas id="photo-canvas" class="hidden"></canvas>
-
-                    <div id="camera-message" class="camera-message">
-                        CAMERA NOT CONNECTED
-                    </div>
-                </div>
-
-                <div class="camera-controls">
-                    <button id="start-camera">START CAMERA</button>
-                    <button id="capture-button" disabled>TAKE PHOTO</button>
-                </div>
-
-                <div class="upload-area">
-                    <label for="photo-upload">OR UPLOAD A PHOTO</label>
-                    <input type="file" id="photo-upload" accept="image/*">
-                </div>
-
-            </div>
-
-
-            <aside class="photo-panel">
-
-                <p class="section-label">PHOTO ARCHIVE</p>
-
-                <div id="photo-gallery" class="photo-gallery">
-                    <p class="empty-message">
-                        No photographs recorded yet.
-                    </p>
-                </div>
-
-                <button id="download-button" disabled>
-                    DOWNLOAD PHOTOS
-                </button>
-
-                <button id="clear-button" class="clear-button" disabled>
-                    CLEAR ARCHIVE
-                </button>
-
-            </aside>
-
-        </section>
-
-        <footer class="studio-footer">
-            PROPERTY OF UMBRELLA CORPORATION · HANDLE WITH CARE
-        </footer>
-
-    </main>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
